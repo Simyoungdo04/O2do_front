@@ -28,6 +28,26 @@ export const AuthTitle = styled.h1`
   color: ${({ theme }) => theme.color.point};
 `;
 
+export const AuthLogo = styled.h1`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: ${({ theme }) => theme.color.text};
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.color.point};
+    flex: none;
+  }
+`;
+
 export const AuthSubTitle = styled.p`
   margin: 0 0 28px;
   font-family: ${({ theme }) => theme.font};

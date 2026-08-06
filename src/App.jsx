@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { ErrMsg, ErrSpace } from './App.styles'
 import DefaultLayout from './components/layout/DefaultLayout'
 import ProtectedRoute from './routes/ProtectedRoute'
 import LoginPage from './pages/LoginPage'
@@ -9,12 +8,12 @@ import TodayTodoPage from './pages/TodayTodoPage'
 import TodoListsPage from './pages/TodoListsPage'
 import TodoFormPage from './pages/TodoFormPage'
 import BacklogPage from './pages/BacklogPage'
+import { useAuth } from './context/AuthContext'
 
-const ErrPage = () => (
-  <ErrSpace>
-    <ErrMsg>없는 페이지입니다.</ErrMsg>
-  </ErrSpace>
-)
+const NotFoundRedirect = () => {
+  const { isLogin } = useAuth()
+  return <Navigate to={isLogin ? '/today' : '/login'} replace />
+}
 
 function App() {
   return (
@@ -33,7 +32,7 @@ function App() {
           <Route path="/mypage" element={<MyPage />} />
         </Route>
 
-        <Route path="*" element={<ErrPage />} />
+        <Route path="*" element={<NotFoundRedirect />} />
       </Route>
     </Routes>
   )

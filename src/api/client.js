@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const client = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
+  baseURL: "https://mungchi.xyz",
 })
 
 client.interceptors.request.use((config) => {
@@ -32,7 +32,7 @@ client.interceptors.response.use(
     try {
       if (!refreshPromise) {
         refreshPromise = axios
-          .post(`${import.meta.env.VITE_API_BASE_URL}/api/token/refresh`, null, {
+          .post(`https://mungchi.xyz/api/token/refresh`, null, {
             params: { refreshToken },
           })
           .finally(() => {

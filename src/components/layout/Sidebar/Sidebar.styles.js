@@ -48,9 +48,23 @@ export const PanelHeader = styled.div`
 `;
 
 export const PanelLogo = styled.span`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 20px;
   font-weight: 800;
-  color: ${({ theme }) => theme.color.point};
+  letter-spacing: -0.02em;
+  color: ${({ theme }) => theme.color.text};
+
+  &::before {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.color.point};
+    flex: none;
+  }
 `;
 
 export const CloseButton = styled.button`

@@ -73,7 +73,7 @@ const Sidebar = ({ open, onClose }) => {
       <Overlay $open={open} onClick={onClose} aria-hidden={!open} />
       <Panel $open={open} aria-hidden={!open}>
         <PanelHeader>
-          <PanelLogo>O2do</PanelLogo>
+          <PanelLogo>O2DO</PanelLogo>
           <CloseButton type="button" onClick={onClose} aria-label="메뉴 닫기">
             ✕
           </CloseButton>

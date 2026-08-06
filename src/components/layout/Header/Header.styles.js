@@ -12,11 +12,25 @@ export const HeaderWrap = styled.header`
 `;
 
 export const Logo = styled.h1`
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-size: 24px;
   font-weight: 800;
+  letter-spacing: -0.02em;
 
-  color: ${({ theme }) => theme.color.point};
+  color: ${({ theme }) => theme.color.headerText};
   cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.color.point};
+    flex: none;
+  }
 `;
 
 export const Spacer = styled.div`
@@ -50,19 +64,3 @@ export const Bar = styled.span`
   background: ${({ theme }) => theme.color.headerText};
 `;
 
-export const LoginBtn = styled.button`
-  padding: 8px 16px;
-
-  border-radius: ${({ theme }) => theme.radius.sm};
-  border: 1px solid ${({ theme }) => theme.color.point};
-  background: transparent;
-  color: ${({ theme }) => theme.color.point};
-
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-
-  &:hover {
-    background: ${({ theme }) => theme.color.pointSoft};
-  }
-`;

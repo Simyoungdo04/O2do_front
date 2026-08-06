@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <FooterWrapper>
-      <FooterLogo onClick={() => navi("/")}>O2do</FooterLogo>
+      <FooterLogo onClick={() => navi("/")}>O2DO</FooterLogo>
       <FooterText>오늘의 TODO</FooterText>
     </FooterWrapper>
   );

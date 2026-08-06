@@ -13,12 +13,26 @@ export const FooterWrapper = styled.footer`
 `;
 
 export const FooterLogo = styled.h2`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 16px;
   font-weight: 700;
+  letter-spacing: -0.02em;
 
   color: ${({ theme }) => theme.color.footerText};
 
   cursor: pointer;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: ${({ theme }) => theme.color.point};
+    flex: none;
+  }
 `;
 
 export const FooterText = styled.p`

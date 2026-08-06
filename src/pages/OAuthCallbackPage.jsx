@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { kakaoLogin } from '../api/auth'
 import { useAuth } from '../context/AuthContext'
-import { AuthWrapper, AuthCard, AuthTitle, StatusText, ErrorText, BackButton } from './styles/Auth.styles'
+import { AuthWrapper, AuthCard, AuthTitle, AuthLogo, StatusText, ErrorText, BackButton } from './styles/Auth.styles'
 
 export default function OAuthCallbackPage() {
   const [searchParams] = useSearchParams()
@@ -45,7 +45,10 @@ export default function OAuthCallbackPage() {
   return (
     <AuthWrapper>
       <AuthCard>
-        <AuthTitle>O2do</AuthTitle>
+        <AuthLogo>
+          <span className="dot" />
+          O2DO
+        </AuthLogo>
         <StatusText>로그인 처리 중...</StatusText>
       </AuthCard>
     </AuthWrapper>
