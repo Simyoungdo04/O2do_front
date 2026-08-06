@@ -56,24 +56,26 @@ export const AuthSubTitle = styled.p`
 `;
 
 export const KakaoButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  display: block;
   width: 100%;
-  height: 48px;
+  padding: 0;
   border: none;
   border-radius: 12px;
-  background: #fee500;
-  font-family: ${({ theme }) => theme.font};
-  font-size: 15px;
-  font-weight: 700;
-  color: rgba(0, 0, 0, 0.85);
+  background: none;
   cursor: pointer;
-  transition: background 0.15s ease;
+  overflow: hidden;
+  line-height: 0;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
   &:hover {
-    background: #fada0a;
+    opacity: 0.9;
   }
 `;
 

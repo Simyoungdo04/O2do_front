@@ -1,5 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import kakaoLoginImg from "../assets/kakao/kakao_login_large_wide.png";
 import {
   AuthWrapper,
   AuthCard,
@@ -38,11 +39,7 @@ export default function LoginPage() {
         </AuthLogo>
         <AuthSubTitle>오늘의 TODO</AuthSubTitle>
         <KakaoButton onClick={() => (window.location.href = KAKAO_AUTH_URL)}>
-          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
-            <ellipse cx="9" cy="7" rx="8" ry="6.2" fill="#000000" fillOpacity="0.85" />
-            <polygon points="7,11.8 4,17 9.5,12.7" fill="#000000" fillOpacity="0.85" />
-          </svg>
-          카카오 로그인
+          <img src={kakaoLoginImg} alt="카카오 로그인" />
         </KakaoButton>
         <GoogleButton onClick={() => (window.location.href = GOOGLE_AUTH_URL)}>
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
