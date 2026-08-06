@@ -38,7 +38,7 @@ export default function LoginPage() {
         </AuthLogo>
         <AuthSubTitle>오늘의 TODO</AuthSubTitle>
         <KakaoButton onClick={() => (window.location.href = KAKAO_AUTH_URL)}>
-          <svg width="18" height="17" viewBox="0 0 18 17" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
             <path
               fill="#000000"
               fillOpacity="0.85"
