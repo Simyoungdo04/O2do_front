@@ -38,7 +38,14 @@ export default function LoginPage() {
         </AuthLogo>
         <AuthSubTitle>오늘의 TODO</AuthSubTitle>
         <KakaoButton onClick={() => (window.location.href = KAKAO_AUTH_URL)}>
-          카카오로 시작하기
+          <svg width="18" height="17" viewBox="0 0 18 17" aria-hidden="true">
+            <path
+              fill="#000000"
+              fillOpacity="0.85"
+              d="M9 0C4.03 0 0 3.13 0 7c0 2.49 1.67 4.68 4.19 5.93l-.86 3.14a.4.4 0 0 0 .6.44l3.66-2.45c.65.09 1.32.13 2 .13 4.97 0 9-3.13 9-7S13.97 0 9 0Z"
+            />
+          </svg>
+          카카오 로그인
         </KakaoButton>
         <GoogleButton onClick={() => (window.location.href = GOOGLE_AUTH_URL)}>
           <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">

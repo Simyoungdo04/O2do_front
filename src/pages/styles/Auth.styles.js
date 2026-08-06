@@ -56,15 +56,19 @@ export const AuthSubTitle = styled.p`
 `;
 
 export const KakaoButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
   height: 48px;
   border: none;
-  border-radius: ${({ theme }) => theme.radius.sm};
+  border-radius: 12px;
   background: #fee500;
   font-family: ${({ theme }) => theme.font};
   font-size: 15px;
   font-weight: 700;
-  color: #191600;
+  color: rgba(0, 0, 0, 0.85);
   cursor: pointer;
   transition: background 0.15s ease;
 
