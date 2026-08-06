@@ -73,6 +73,29 @@ export const KakaoButton = styled.button`
   }
 `;
 
+export const GoogleButton = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  margin-top: 10px;
+  border: 1px solid ${({ theme }) => theme.color.border};
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background: #ffffff;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 15px;
+  font-weight: 700;
+  color: #3c4043;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.color.bgSoft};
+  }
+`;
+
 export const StatusText = styled.p`
   font-family: ${({ theme }) => theme.font};
   font-size: 14px;

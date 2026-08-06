@@ -21,7 +21,8 @@ function App() {
       <Route element={<DefaultLayout />}>
         <Route path="/" element={<Navigate to="/today" replace />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/oauth/callback" element={<OAuthCallbackPage />} />
+        <Route path="/oauth/callback" element={<OAuthCallbackPage provider="kakao" />} />
+        <Route path="/oauth/callback/google" element={<OAuthCallbackPage provider="google" />} />
 
         <Route element={<ProtectedRoute />}>
           <Route path="/today" element={<TodayTodoPage />} />

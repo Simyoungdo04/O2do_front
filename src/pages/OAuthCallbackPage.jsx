@@ -1,10 +1,15 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { kakaoLogin } from '../api/auth'
+import { kakaoLogin, googleLogin } from '../api/auth'
 import { useAuth } from '../context/AuthContext'
 import { AuthWrapper, AuthCard, AuthTitle, AuthLogo, StatusText, ErrorText, BackButton } from './styles/Auth.styles'
 
-export default function OAuthCallbackPage() {
+const LOGIN_BY_PROVIDER = {
+  kakao: kakaoLogin,
+  google: googleLogin,
+}
+
+export default function OAuthCallbackPage({ provider = 'kakao' }) {
   const [searchParams] = useSearchParams()
   const [error, setError] = useState(null)
   const navigate = useNavigate()
@@ -20,15 +25,15 @@ export default function OAuthCallbackPage() {
     if (requested.current) return
     requested.current = true
 
-    kakaoLogin(code)
+    LOGIN_BY_PROVIDER[provider](code)
       .then((response) => {
         login(response)
         navigate('/today', { replace: true })
       })
       .catch(() => {
-        setError('카카오 로그인에 실패했습니다.')
+        setError('로그인에 실패했습니다.')
       })
-  }, [searchParams, login, navigate])
+  }, [searchParams, login, navigate, provider])
 
   if (error) {
     return (
