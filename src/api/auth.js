@@ -3,6 +3,12 @@ import client from './client'
 export const kakaoLogin = (code) =>
   client.post('/api/user/login/kakao', null, { params: { code } }).then((res) => res.data.data)
 
+export const localLogin = ({ loginId, password }) =>
+  client.post('/api/user/login/local', { loginId, password }).then((res) => res.data.data)
+
+export const signup = ({ loginId, password, userName }) =>
+  client.post('/api/user/signup', { loginId, password, userName }).then((res) => res.data.data)
+
 export const googleLogin = (code) =>
   client.post('/api/user/login/google', null, { params: { code } }).then((res) => res.data.data)
 

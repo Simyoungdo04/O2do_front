@@ -249,6 +249,7 @@ export const StatusText = styled.p`
 export const DateSearch = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   margin-bottom: 20px;
 `;
@@ -394,6 +395,12 @@ export const TextAreaBox = styled.textarea`
     outline: none;
     border-color: ${({ theme }) => theme.color.point};
   }
+`;
+
+export const CharCount = styled.span`
+  align-self: flex-end;
+  font-size: 12px;
+  color: ${({ theme, $over }) => ($over ? theme.color.danger : theme.color.sub)};
 `;
 
 export const HintText = styled.p`

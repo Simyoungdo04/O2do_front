@@ -107,7 +107,8 @@ export const buildTheme = (paletteKey, mode = "light") => {
       ...(isDark ? darkColor : baseColor),
       point: palette.point,
       pointHover: palette.pointHover,
-      pointDark: palette.pointDark,
+      // pointDark는 밝은 배경 위 대비용 어두운 톤이라 어두운 배경에서는 대비가 낮음 -> 다크 모드에서는 더 밝은 톤으로 대체
+      pointDark: isDark ? palette.pointHover : palette.pointDark,
       // 다크 모드에서는 연한 파스텔 대신 포인트 컬러를 낮은 불투명도로
       pointSoft: isDark ? `${palette.point}33` : palette.pointSoft,
     },

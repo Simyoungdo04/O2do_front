@@ -19,12 +19,14 @@ export const toLocalIsoString = (date) => {
   );
 };
 
-// 오늘 날짜 + "HH:mm" 문자열을 합쳐 LocalDateTime 문자열로 (할 일은 항상 오늘 리스트 소속)
-export const combineTodayTime = (hhmm) => {
+// 기준 날짜 + "HH:mm" 문자열을 합쳐 LocalDateTime 문자열로
+export const combineDateTime = (date, hhmm) => {
   if (!hhmm) return null;
-  const d = new Date();
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${hhmm}:00`;
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${hhmm}:00`;
 };
+
+// 오늘 날짜 + "HH:mm" (할 일 생성 시 대상 날짜를 지정하지 않은 경우)
+export const combineTodayTime = (hhmm) => combineDateTime(new Date(), hhmm);
 
 export const parseLocalDate = (isoString) => (isoString ? new Date(isoString) : null);
 
@@ -47,3 +49,7 @@ export const addDays = (date, days) => {
   d.setDate(d.getDate() + days);
   return d;
 };
+
+export const startOfMonth = (date) => new Date(date.getFullYear(), date.getMonth(), 1);
+
+export const endOfMonth = (date) => new Date(date.getFullYear(), date.getMonth() + 1, 0);

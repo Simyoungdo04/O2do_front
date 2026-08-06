@@ -33,11 +33,17 @@ export const DatePickerGlobalStyle = createGlobalStyle`
   .react-datepicker-time__header {
     color: ${({ theme }) => theme.color.text};
     font-weight: 700;
-    font-size: 13.5px;
+    font-size: 19px;
+    padding: 6px 0;
   }
 
   .react-datepicker__day-name {
     color: ${({ theme }) => theme.color.sub};
+    font-size: 14px;
+  }
+
+  .react-datepicker__month {
+    margin: 14px;
   }
 
   .react-datepicker__navigation-icon::before {
@@ -50,12 +56,13 @@ export const DatePickerGlobalStyle = createGlobalStyle`
 
   .react-datepicker__day,
   .react-datepicker__day-name {
-    width: 2rem;
-    line-height: 2rem;
+    width: 3.4rem;
+    line-height: 3.4rem;
   }
 
   .react-datepicker__day {
     color: ${({ theme }) => theme.color.text};
+    font-size: 16px;
     border-radius: ${({ theme }) => theme.radius.sm};
   }
 
@@ -89,6 +96,31 @@ export const DatePickerGlobalStyle = createGlobalStyle`
 
   .react-datepicker__day--disabled:hover {
     background: transparent;
+  }
+
+  .day-all-done,
+  .day-has-pending {
+    position: relative;
+  }
+
+  .day-all-done::after,
+  .day-has-pending::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+
+  .day-all-done::after {
+    background: ${({ theme }) => theme.color.success};
+  }
+
+  .day-has-pending::after {
+    background: ${({ theme }) => theme.color.point};
   }
 
   .react-datepicker__time-container {

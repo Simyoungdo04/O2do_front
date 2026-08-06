@@ -87,18 +87,134 @@ export const GoogleButton = styled.button`
   width: 100%;
   height: 48px;
   margin-top: 10px;
-  border: 1px solid ${({ theme }) => theme.color.border};
-  border-radius: ${({ theme }) => theme.radius.sm};
+  border: 1px solid #747775;
+  border-radius: 12px;
   background: #ffffff;
   font-family: ${({ theme }) => theme.font};
   font-size: 15px;
-  font-weight: 700;
-  color: #3c4043;
+  font-weight: 500;
+  color: #1f1f1f;
   cursor: pointer;
   transition: background 0.15s ease;
 
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
   &:hover {
-    background: ${({ theme }) => theme.color.bgSoft};
+    background: #f8f8f8;
+  }
+`;
+
+export const AuthForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 18px;
+`;
+
+export const AuthFieldGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+`;
+
+export const AuthInput = styled.input`
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid ${({ theme }) => theme.color.border};
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background: ${({ theme }) => theme.color.surface};
+  font-family: ${({ theme }) => theme.font};
+  font-size: 15px;
+  color: ${({ theme }) => theme.color.text};
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.color.sub};
+  }
+
+  &:focus {
+    outline: none;
+    border-color: ${({ theme }) => theme.color.point};
+  }
+`;
+
+export const AuthFieldError = styled.p`
+  margin: 0;
+  padding-left: 2px;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 12px;
+  color: ${({ theme }) => theme.color.danger};
+`;
+
+export const AuthHint = styled.p`
+  margin: 0;
+  padding-left: 2px;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 12px;
+  color: ${({ theme }) => theme.color.sub};
+`;
+
+export const AuthSubmitButton = styled.button`
+  height: 48px;
+  margin-top: 4px;
+  border: none;
+  border-radius: ${({ theme }) => theme.radius.sm};
+  background: ${({ theme }) => theme.color.point};
+  font-family: ${({ theme }) => theme.font};
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+`;
+
+export const AuthDivider = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 13px;
+  color: ${({ theme }) => theme.color.sub};
+
+  &::before,
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: ${({ theme }) => theme.color.border};
+  }
+`;
+
+export const AuthToggleText = styled.p`
+  margin: 20px 0 0;
+  font-family: ${({ theme }) => theme.font};
+  font-size: 14px;
+  color: ${({ theme }) => theme.color.sub};
+
+  button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin-left: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    color: ${({ theme }) => theme.color.point};
+    cursor: pointer;
   }
 `;
 

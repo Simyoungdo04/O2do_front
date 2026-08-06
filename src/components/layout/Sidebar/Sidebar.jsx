@@ -30,7 +30,7 @@ import {
 
 const navs = [
   { content: "오늘의 할 일", to: "/today" },
-  { content: "지난 기록", to: "/todos" },
+  { content: "달력", to: "/todos" },
   { content: "밀린 할 일", to: "/todos/backlog" },
   { content: "마이페이지", to: "/mypage" },
 ];

@@ -16,10 +16,23 @@ export const WheelFrame = styled.div`
 
   [data-rwp] {
     height: 168px;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  [data-rwp]:focus,
+  [data-rwp]:focus-visible {
+    outline: none;
+  }
+
+  [data-rwp-option] {
+    -webkit-tap-highlight-color: transparent;
   }
 
   [data-rwp-highlight-wrapper] {
-    background: ${({ theme }) => theme.color.pointSoft};
+    /* 뒤쪽 3D 숫자 레이어의 가운데 항목이 계속 그려지고 있어서, 다크모드에서 반투명(pointSoft)이면
+       그 밑의 밝은 글자색이 비쳐 보임 -> 다크모드는 불투명한 배경으로 완전히 가림 */
+    background: ${({ theme }) => (theme.mode === "dark" ? theme.color.bgDark : theme.color.pointSoft)};
     border-top: 1px solid ${({ theme }) => theme.color.point};
     border-bottom: 1px solid ${({ theme }) => theme.color.point};
   }
