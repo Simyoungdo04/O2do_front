@@ -31,7 +31,7 @@ export const FilterButton = styled.button`
   padding: 6px 14px;
   border-radius: 999px;
   border: 1px solid ${({ theme, $active }) => ($active ? theme.color.point : theme.color.border)};
-  background: ${({ theme, $active }) => ($active ? theme.color.pointSoft : "#fff")};
+  background: ${({ theme, $active }) => ($active ? theme.color.pointSoft : theme.color.surface)};
   color: ${({ theme, $active }) => ($active ? theme.color.pointDark : theme.color.sub)};
   font-size: 13px;
   font-weight: 600;
@@ -55,7 +55,7 @@ export const TodoItem = styled.li`
   display: flex;
   flex-direction: column;
   padding: 14px 16px;
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.md};
   box-shadow: ${({ theme }) => theme.shadow.sm};
@@ -182,7 +182,7 @@ export const IconButton = styled.button`
   padding: 6px 12px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-size: 13px;
   color: ${({ theme }) => theme.color.sub};
   cursor: pointer;
@@ -197,7 +197,7 @@ export const EditLink = styled(Link)`
   padding: 6px 12px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-size: 13px;
   color: ${({ theme }) => theme.color.sub};
   text-decoration: none;
@@ -229,7 +229,7 @@ export const CarryButton = styled(IconButton)`
     border-color: ${({ theme }) => theme.color.disabled};
     color: ${({ theme }) => theme.color.disabled};
     cursor: not-allowed;
-    background: #fff;
+    background: ${({ theme }) => theme.color.surface};
   }
 `;
 
@@ -279,7 +279,7 @@ export const ArrowButton = styled.button`
   justify-content: center;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   color: ${({ theme }) => theme.color.sub};
   font-size: 16px;
   line-height: 1;
@@ -329,7 +329,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 18px;
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   padding: 28px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.lg};
@@ -424,7 +424,7 @@ export const CancelButton = styled.button`
   padding: 0 20px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-size: 14px;
   font-weight: 600;
   color: ${({ theme }) => theme.color.text};

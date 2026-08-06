@@ -154,6 +154,42 @@ export const SectionTitle = styled.h3`
   color: ${({ theme }) => theme.color.sub};
 `;
 
+export const ModeRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const ModeLabel = styled.span`
+  font-size: 14px;
+  font-weight: 500;
+  color: ${({ theme }) => theme.color.text};
+`;
+
+export const ModeToggle = styled.button`
+  position: relative;
+  width: 44px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: ${({ $active, theme }) => ($active ? theme.color.point : theme.color.bgDark)};
+  cursor: pointer;
+  transition: background 0.15s ease;
+`;
+
+export const ModeToggleKnob = styled.span`
+  position: absolute;
+  top: 3px;
+  left: ${({ $active }) => ($active ? "21px" : "3px")};
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  transition: left 0.15s ease;
+`;
+
 export const ThemeDots = styled.div`
   display: flex;
   gap: 10px;
@@ -190,7 +226,7 @@ export const LogoutButton = styled.button`
   height: 44px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-size: 14px;
   font-weight: 700;
   color: ${({ theme }) => theme.color.danger};

@@ -4,7 +4,7 @@ export const Main = styled.main`
   max-width: 480px;
   margin: 50px auto;
   padding: 32px;
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.lg};
   box-shadow: ${({ theme }) => theme.shadow.sm};
@@ -67,7 +67,7 @@ export const WithdrawButton = styled.button`
   padding: 0 16px;
   border: 1px solid ${({ theme }) => theme.color.danger};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-size: 13px;
   font-weight: 700;
   color: ${({ theme }) => theme.color.danger};

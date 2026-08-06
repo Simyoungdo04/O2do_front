@@ -7,10 +7,17 @@ export const DatePickerGlobalStyle = createGlobalStyle`
 
   .react-datepicker {
     font-family: ${({ theme }) => theme.font};
+    background: ${({ theme }) => theme.color.surface};
     border: 1px solid ${({ theme }) => theme.color.border};
     border-radius: ${({ theme }) => theme.radius.md};
     box-shadow: ${({ theme }) => theme.shadow.md};
     overflow: hidden;
+  }
+
+  .react-datepicker__month-container,
+  .react-datepicker__time-container,
+  .react-datepicker__time-box {
+    background: ${({ theme }) => theme.color.surface};
   }
 
   .react-datepicker__triangle {

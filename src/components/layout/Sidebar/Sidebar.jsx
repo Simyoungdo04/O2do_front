@@ -18,6 +18,10 @@ import {
   Divider,
   ThemeSection,
   SectionTitle,
+  ModeRow,
+  ModeLabel,
+  ModeToggle,
+  ModeToggleKnob,
   ThemeDots,
   ThemeDot,
   Bottom,
@@ -35,7 +39,7 @@ const Sidebar = ({ open, onClose }) => {
   const navi = useNavigate();
   const location = useLocation();
   const { user, logout } = useAuth();
-  const { themeKey, setThemeKey, palettes } = useThemeMode();
+  const { themeKey, setThemeKey, palettes, mode, toggleMode } = useThemeMode();
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
@@ -99,6 +103,23 @@ const Sidebar = ({ open, onClose }) => {
         </NavList>
 
         <Divider />
+
+        <ThemeSection>
+          <SectionTitle>화면 모드</SectionTitle>
+          <ModeRow>
+            <ModeLabel>{mode === "dark" ? "다크 모드" : "라이트 모드"}</ModeLabel>
+            <ModeToggle
+              type="button"
+              role="switch"
+              aria-checked={mode === "dark"}
+              aria-label="다크 모드 전환"
+              $active={mode === "dark"}
+              onClick={toggleMode}
+            >
+              <ModeToggleKnob $active={mode === "dark"} />
+            </ModeToggle>
+          </ModeRow>
+        </ThemeSection>
 
         <ThemeSection>
           <SectionTitle>포인트 컬러</SectionTitle>

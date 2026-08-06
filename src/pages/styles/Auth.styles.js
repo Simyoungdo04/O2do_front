@@ -14,7 +14,7 @@ export const AuthCard = styled.div`
   width: 100%;
   max-width: 400px;
   padding: 40px 32px;
-  background: #ffffff;
+  background: ${({ theme }) => theme.color.surface};
   border-radius: ${({ theme }) => theme.radius.lg};
   box-shadow: ${({ theme }) => theme.shadow.md};
   text-align: center;
@@ -114,7 +114,7 @@ export const BackButton = styled.button`
   padding: 0 20px;
   border: 1px solid ${({ theme }) => theme.color.border};
   border-radius: ${({ theme }) => theme.radius.sm};
-  background: #fff;
+  background: ${({ theme }) => theme.color.surface};
   font-family: ${({ theme }) => theme.font};
   font-size: 14px;
   font-weight: 600;
