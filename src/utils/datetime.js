@@ -32,6 +32,14 @@ export const parseLocalDate = (isoString) => (isoString ? new Date(isoString) : 
 
 export const formatTimeHM = (date) => `${pad(date.getHours())}:${pad(date.getMinutes())}`;
 
+// 시간 휠 피커가 10분 단위만 표시하므로, 새 할 일의 기본값도 미리 10분 단위로 스냅해서 넘겨야
+// 휠에는 스냅된 시각이 보이는데 실제 저장 값은 스냅 전 "지금" 시각(예: 10:33)으로 남는 걸 방지
+export const roundToNearestTenMinutes = (date) => {
+  const rounded = new Date(date);
+  rounded.setMinutes(Math.round(date.getMinutes() / 10) * 10, 0, 0);
+  return rounded;
+};
+
 export const toDateOnlyString = (date) =>
   `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
 

@@ -6,6 +6,7 @@ import {
   formatTimeHM,
   parseLocalDate,
   pad,
+  roundToNearestTenMinutes,
   to12Hour,
   to24Hour,
 } from "../utils/datetime";
@@ -34,7 +35,7 @@ const MEMO_MAX = 1000;
 
 const toHM = (isoString) => {
   const date = parseLocalDate(isoString);
-  return date ? formatTimeHM(date) : formatTimeHM(new Date());
+  return date ? formatTimeHM(date) : formatTimeHM(roundToNearestTenMinutes(new Date()));
 };
 
 export default function TodoFormPage() {
